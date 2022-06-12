@@ -1,0 +1,43 @@
+:root {
+    --primary-color: #151515;
+    --secondary-color: #000000;
+    --text-color: #A2A3A2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+}
+
+header {
+    height: 70px;
+    background-color: var(--secondary-color);
+}
+
+main {
+    background-color: var(--primary-color);
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: calc(100% / 5 - 2rem);
+    margin: 2rem 1rem;
+    padding: 1rem;
+    background-color: var(--secondary-color);
+}
