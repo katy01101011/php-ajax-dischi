@@ -6,6 +6,11 @@ attraverso una chiamata api,
 i dischi a php e li stamperà attraverso vue.
 -->
 
+<!--
+Bonus:
+Attraverso un’altra chiamata api, filtrare gli album per genere.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +18,7 @@ i dischi a php e li stamperà attraverso vue.
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milestone2</title>
+    <title>Bonus</title>
     <!-- STYLE -->
     <link rel="stylesheet" href="css/style.css">
     <!-- VUEJS -->
@@ -27,6 +32,13 @@ i dischi a php e li stamperà attraverso vue.
     <!-- HEADER -->
     <header>
         <img src="img/logo-small.svg" alt="logo spotify">
+        <select @change="change" v-model="genre" name="genre" id="genre">
+            <option value=""></option>
+            <option value="Rock">Rock</option>
+            <option value="Pop">Pop</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Metal">Metal</option>
+        </select>
     </header>
     <!-- /HEADER -->
 
@@ -34,16 +46,18 @@ i dischi a php e li stamperà attraverso vue.
     <main id="app">
         <div class="container">
             <div v-for="card in database" class="card">
-                <img :src="card.poster" alt="">
-                <h2>
-                    {{ card.title }}
-                </h2>
-                <h3>
-                    {{ card.author }}
-                </h3>
-                <h4>
-                    {{ card.year }}
-                </h4>
+                <!-- <template v-if=""> -->
+                    <img :src="card.poster" alt="">
+                    <h2>
+                        {{ card.title }}
+                    </h2>
+                    <h3>
+                        {{ card.author }}
+                    </h3>
+                    <h4>
+                        {{ card.year }}
+                    </h4>
+                <!-- </template> -->
             </div>
         </div>
     </main>
