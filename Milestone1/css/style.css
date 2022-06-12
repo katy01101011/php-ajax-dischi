@@ -2,6 +2,8 @@
     --primary-color: #151515;
     --secondary-color: #000000;
     --text-color: #A2A3A2;
+    --header-height: 70px;
+    --logo-height: 45px;
 }
 
 * {
@@ -16,16 +18,26 @@ body {
 }
 
 header {
-    height: 70px;
+    height: var(--header-height);
     background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    height: var(--logo-height);
+    padding-left: 1rem;
 }
 
 main {
     background-color: var(--primary-color);
+    height: calc(100vh - var(--header-height));
+    overflow-y: scroll;
 }
 
 img {
     max-width: 100%;
+    cursor: pointer;
 }
 
 .container {
@@ -40,4 +52,14 @@ img {
     margin: 2rem 1rem;
     padding: 1rem;
     background-color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: #212121;
+}
+
+h2 {
+    text-transform: uppercase;
+    color: white;
 }
